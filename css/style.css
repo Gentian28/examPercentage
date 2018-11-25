@@ -1,2 +1,85 @@
-body { font-family: 'Montserrat', sans-serif; }
-#content { display: flex; flex-flow: column; align-items: center; }
+* {
+    box-sizing: border-box;
+}
+body { 
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    font-weight: 500;
+}
+input {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    position: relative;
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-weight: 500;
+    max-width: 300px;
+    outline: none;
+}
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+.input-group label {
+    display: block;
+    font-size: 15px;
+    color: #999999;
+    padding-left: 5px;
+    font-weight: 500;
+}
+.input-focus {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.input-focus:before {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #f7931e;
+    transition: 0.35s ease all;
+    -moz-transition: 0.35s ease all;
+    -webkit-transition: 0.35s ease all;
+}
+input:focus ~ .input-focus::before {
+    width: 100%;
+}
+#content { 
+    display: flex; 
+    flex-flow: column; 
+    align-items: center;
+    justify-content: center;
+    height: -webkit-fill-available;
+}
+.message {
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin: 0;
+}
+.info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}

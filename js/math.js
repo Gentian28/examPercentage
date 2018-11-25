@@ -1,12 +1,25 @@
+import { questions, wrongAnswers, result } from './variables.js';
+import { error } from './messages.js';
+
 function calculatePercentage() {
-    let all = document.getElementById('all').value;
-    let ca = document.getElementById('ca').value;
+    let questionsVal = questions.value;
+    let wrongAnswersVal = wrongAnswers.value;
 
-    let percentage = ((all - ca) / all) * 100;
+    let maxVal = Math.max(wrongAnswersVal, questionsVal);
 
-    return percentage;
+    if (questionsVal >= maxVal) {
+        let percentage = ((questionsVal - wrongAnswersVal) / questionsVal) * 100;
+        if (percentage >= 70) {
+            return `<div class="message success">${percentage} %</div>`;
+        } else {
+            return `<div class="message error">${percentage} %</div>`;
+        }
+    } else {
+        return error;
+    }
+
 }
 
 export function getPercentage() {
-    document.getElementById('result').innerHTML = calculatePercentage() + "%";
+    result.innerHTML = calculatePercentage();
 }

@@ -16,15 +16,23 @@
 <body>
 
 	<div id="content">
-		<label>Questions</label>
+		<div class="input-group">
+			<label>Questions</label>
+			<br>
+			<input type="number" name="questions" id="questions" min="0">
+			<span class="input-focus"></span>
+		</div>
 		<br>
-		<input type="number" name="all" id="all">
+		<div class="input-group">
+			<label>Wrong Answers</label>
+			<br>
+			<input type="number" name="wrongAnswers" id="wrongAnswers" min="0" disabled>
+			<span class="input-focus"></span>
+		</div>
 		<br>
-		<label>Wrong Answers</label>
-		<br>
-		<input type="number" name="ca" id="ca">
-		<br>
-		<div id="result">Result will be displayed here!</div>
+		<div id="result">
+			<p class="message info">Result will be displayed here!</p>
+		</div>
 	</div>
 
 	<script>

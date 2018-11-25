@@ -1,0 +1,1 @@
+export const error = '<p class="message warning">Wrong answers exceedes number of total questions!</p>';
