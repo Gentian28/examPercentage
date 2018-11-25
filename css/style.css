@@ -1,0 +1,2 @@
+body { font-family: 'Montserrat', sans-serif; }
+#content { display: flex; flex-flow: column; align-items: center; }
