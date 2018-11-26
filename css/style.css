@@ -56,6 +56,7 @@ input:focus ~ .input-focus::before {
     align-items: center;
     justify-content: center;
     height: -webkit-fill-available;
+    padding: 15px;
 }
 .message {
     padding: 15px;
