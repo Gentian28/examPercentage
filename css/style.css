@@ -6,6 +6,11 @@ body {
     margin: 0;
     font-weight: 500;
 }
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 input {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -50,6 +55,15 @@ input {
 input:focus ~ .input-focus::before {
     width: 100%;
 }
+#wrapper {
+    height: 100vh;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
 #content { 
     display: flex; 
     flex-flow: column; 
@@ -57,6 +71,19 @@ input:focus ~ .input-focus::before {
     justify-content: center;
     height: -webkit-fill-available;
     padding: 15px;
+}
+#questionsList {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+}
+#questionsList li {
+    display: flex;
+}
+#questionsList li ul {
+    display: flex;
 }
 .message {
     padding: 15px;

@@ -33,29 +33,57 @@
 
 <body>
 
-	<div id="content">
-		<div class="input-group">
-			<label>Questions</label>
-			<br>
-			<input type="number" name="questions" id="questions" min="0" placeholder="Number of questions">
-			<span class="input-focus"></span>
+	<div id="wrapper">
+
+		<header>
+			<nav>
+				<ul>
+					<li>Track Exam</li>
+					<li>Calculate Percentage</li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="content">
+
+			<section style="display:flex">
+				<form action="" id="allQuestionsForm">
+					<input type="number" id="allQuestions">
+					<button id="generateQuestionsList" type="button">Generate List</button>
+				</form>
+				<ul id="questionsList">
+					<li class="message info">List will be displayed here!</li>
+				</ul>
+			</section>
+
+			<div id="content">
+				<form action="">
+					<div class="input-group">
+						<label>Questions</label>
+						<br>
+						<input type="number" name="questions" id="questions" min="0" placeholder="Number of questions">
+						<span class="input-focus"></span>
+					</div>
+					<br>
+					<div class="input-group">
+						<label>Wrong Answers</label>
+						<br>
+						<input type="number" name="wrongAnswers" id="wrongAnswers" min="0" disabled>
+						<span class="input-focus"></span>
+					</div>
+					<br>
+					<div id="result">
+						<p class="message info">Result will be displayed here!</p>
+					</div>
+				</form>
+			</div>
+
 		</div>
-		<br>
-		<div class="input-group">
-			<label>Wrong Answers</label>
-			<br>
-			<input type="number" name="wrongAnswers" id="wrongAnswers" min="0" disabled>
-			<span class="input-focus"></span>
-		</div>
-		<br>
-		<div id="result">
-			<p class="message info">Result will be displayed here!</p>
-		</div>
+
+		<footer>Footer</footer>
+
 	</div>
 
-	<script>
-
-	</script>
 
 	<script src="js/app.js" type="module"></script>
 
