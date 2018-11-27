@@ -1,4 +1,3 @@
-import { questions, wrongAnswers, result } from './variables.js';
 import { error } from './messages.js';
 
 function calculatePercentage() {

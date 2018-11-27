@@ -11,7 +11,7 @@ ul, ol {
     padding: 0;
     margin: 0;
 }
-input {
+.input-group input {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     position: relative;
@@ -82,7 +82,7 @@ input:focus ~ .input-focus::before {
 #questionsList li {
     display: flex;
 }
-#questionsList li ul {
+#questionsList li form {
     display: flex;
 }
 .message {
