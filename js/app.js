@@ -1,4 +1,8 @@
 import { getPercentage } from './percentage.js';
+import { populateQuestionsList } from './questionsListGenerator.js';
+import { getAnswers } from './questionsResult.js';
+import { insertAnswers } from './insert.js';
+// import { setContentHeight } from './viewport.js';
 
 wrongAnswers.oninput = function () {
     getPercentage();
@@ -13,48 +17,31 @@ questions.oninput = function () {
 }
 
 generateQuestionsList.onclick = function () {
-    let list = '';
-    let allQuestionsVal = allQuestions.value;
-    for (var i = 1; i <= allQuestionsVal; i++) {
-        list += `<li>
-        <span>Q${i}</span>
-            <form>
-                <input type="radio" name="answer" value="correct"> Correct
-                <input type="radio" name="answer" value="wrong"> Wrong
-            </form>
-        </li>`;
-    }
-    allQuestionsForm.style.display = 'none';
-    questionsList.innerHTML = list;
-
-    let listItems = questionsList.children;
-
-    // console.log(listItems);
-
-    for (i = 0; i < listItems.length; i++) {
-        listItems[i].onclick = function () {
-            // console.log(this.children[0].innerText);
-        }
-    }
-
+    numberOfQuestionsForm.style.display = 'none';
+    questionsListSections.style.display = 'flex';
+    populateQuestionsList();
 }
 
-var correctAnswersList = [];
-var wrongAnswersList = [];
+submitTest.onclick = function () {
+    let correctAnswers = getAnswers().correctAnswersList.length;
+    let wrongAnswers = getAnswers().wrongAnswersList.length;
+    let wrongNumbers = getAnswers().wrongAnswersNumber;
+    insertAnswers(correctAnswers, wrongAnswers, wrongNumbers);
+}
 
-document.getElementById('submitTest').onclick = function () {
-    correctAnswersList.length = 0;
-    wrongAnswersList.length = 0;
-    var answers = document.getElementsByName('answer');
-    for (var i = 0; i < answers.length; i++) {
-        if (answers[i].checked) {
-            if (answers[i].value == 'correct') {
-                correctAnswersList.push(i);
-            } else {
-                wrongAnswersList.push(i);
-            }
-        }
-    }
-    console.log(correctAnswersList.length);
-    console.log(wrongAnswersList.length);
+window.onload = function () {
+    // setContentHeight()
+}
+
+window.onresize = function () {
+    // setContentHeight()
+}
+
+trackExamTab.onclick = function () {
+    percentageCalculator.style.display = 'none';
+    numberOfQuestionsForm.style.display = 'block';
+}
+calculatePercentageTab.onclick = function () {
+    numberOfQuestionsForm.style.display = 'none';
+    percentageCalculator.style.display = 'flex';
 }

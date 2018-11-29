@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    outline: none;
 }
 body { 
     font-family: 'Montserrat', sans-serif;
@@ -22,12 +23,15 @@ ul, ol {
     border: none;
     border-bottom: 2px solid #ccc;
     font-weight: 500;
-    max-width: 300px;
+    width: 300px;
     outline: none;
 }
 .input-group {
     position: relative;
     margin-bottom: 25px;
+}
+.input-group:last-child {
+    margin-bottom: 0;
 }
 .input-group label {
     display: block;
@@ -52,20 +56,65 @@ ul, ol {
     -moz-transition: 0.35s ease all;
     -webkit-transition: 0.35s ease all;
 }
-input:focus ~ .input-focus::before {
+.input-group input:focus ~ .input-focus::before {
     width: 100%;
+}
+.inputSubmit {
+    padding: 0 20px;
+    min-width: 160px;
+    height: 50px;
+    background-color: #f7931e;
+    border: 1px solid #f7931e;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #fff;
+    box-shadow: 0 3px 12px 1px #ccc;
+    -moz-box-shadow: 0 3px 12px 1px #ccc;
+    -webkit-box-shadow: 0 3px 12px 1px #ccc;
+    -o-box-shadow: 0 3px 12px 1px #ccc;
+    -ms-box-shadow: 0 3px 12px 1px #ccc;
+    transition: all .2s;
 }
 #wrapper {
     height: 100vh;
 }
-.content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
+#header {
+    padding: 15px;
+    background: #f7931e;
+    color: #fff;
+    box-shadow: 0 1px 5px 1px #ccc;
+    font-size: 14px;
 }
-#content { 
-    display: flex; 
+#header li:hover {
+    cursor: pointer;
+}
+#header li:not(:first-child) {
+    margin-left: 15px;
+}
+#content {
+    display: flex;
+    flex-flow: column;
+    padding: 0 15px;
+    margin: 15px 0;
+    height: calc(100% - 112px);
+}
+#numberOfQuestionsForm {
+    margin: auto;
+}
+#allQuestionsForm {
+    width: max-content;
+    margin: 0 auto;
+}
+#questionsListSections {
+    display: none;
+    height: 100%;
+    flex-flow: column;
+    justify-content: space-between;
+}
+#percentageCalculator { 
+    display: none;
+    /* display: flex;  */
     flex-flow: column; 
     align-items: center;
     justify-content: center;
@@ -76,11 +125,18 @@ input:focus ~ .input-focus::before {
     display: flex;
     flex-flow: column;
     flex-wrap: wrap;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
+    margin-bottom: 10px;
+    max-height: calc(100vh - 131px);
 }
 #questionsList li {
     display: flex;
+    align-items: center;
+    margin: 5px;
+    width: 100px;
+    justify-content: space-between;
+}
+#questionsList li:last-child {
+    margin-bottom: 0;
 }
 #questionsList li form {
     display: flex;
@@ -110,4 +166,93 @@ input:focus ~ .input-focus::before {
     color: #8a6d3b;
     background-color: #fcf8e3;
     border-color: #faebcc;
+}
+
+
+
+.radioButton {
+    display: block;
+    position: relative;
+    height: 21px;
+    width: 21px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.radioButton:last-child .checkmark {
+    margin-left: 3px;
+}
+/* Hide the browser's default radio button */
+.radioButton input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #888;
+    justify-content: center;
+    align-items: center;
+}
+
+/* When the radio button is checked, add a blue background */
+.radioButton input:checked ~ .checkmark {
+    border: 2px solid rgb(77, 144, 254);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radioButton input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radioButton .checkmark:after {
+    width: 10px;
+    height: 10px;
+    background: rgb(77, 144, 254);
+    border-radius: 50%;
+}
+
+.flex {
+    display: flex;
+}
+.space-between {
+    justify-content: space-between;
+}
+.justifiy-center {
+    justify-content: center;
+}
+.align-center {
+    align-items: center;
+}
+#links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    margin: 10px;
+}
+#links a img {
+    max-width: 24px;
+    margin-left: 10px;
 }

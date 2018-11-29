@@ -2,6 +2,47 @@
 <html>
 
 <head>
+	<!-- Firebase App is always required and must be first -->
+	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
+
+	<!-- Add additional services that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-messaging.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-functions.js"></script>
+
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyDuzACHEd2fY1KYBGaUlps1k9uaInboiik",
+			authDomain: "exampercentage.firebaseapp.com",
+			databaseURL: "https://exampercentage.firebaseio.com",
+			projectId: "exampercentage",
+			storageBucket: "exampercentage.appspot.com",
+			messagingSenderId: "348917508764"
+		};
+		firebase.initializeApp(config);
+
+		// Initialize Cloud Firestore through Firebase
+		var db = firebase.firestore();
+
+		// Disable deprecated features
+		db.settings({
+			timestampsInSnapshots: true
+		});
+
+		// db.collection("users").get().then((querySnapshot) => {
+		// 	querySnapshot.forEach((doc) => {
+		// 		console.log(doc);
+		// 		console.log(`${doc.id} => ${doc.data()}`);
+		// 	});
+		// });
+	</script>
+
+	<script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,29 +76,44 @@
 
 	<div id="wrapper">
 
-		<header>
-			<nav>
-				<ul>
-					<li>Track Exam</li>
-					<li>Calculate Percentage</li>
+		<header id="header" class="flex space-between">
+			<nav id="menu">
+				<ul class="flex tab-list">
+					<li id="trackExamTab">Track Exam</li>
+					<li id="calculatePercentageTab">Calculate Percentage</li>
+					<li id="getResultsTab">Get Results</li>
+				</ul>
+			</nav>
+			<nav id="authentication">
+				<ul class="flex">
+					<li>Sign up</li>
+					<li>Login</li>
 				</ul>
 			</nav>
 		</header>
 
-		<div class="content">
+		<div id="content" class="tabs-content-list">
 
-			<section style="display:flex">
+			<article id="numberOfQuestionsForm">
 				<form action="" id="allQuestionsForm">
-					<input type="number" id="allQuestions">
-					<button id="generateQuestionsList" type="button">Generate List</button>
+					<div class="input-group">
+						<label for="allQuestions">Total exam questions</label>
+						<input type="number" id="allQuestions" placeholder="Number of questions">
+						<span class="input-focus"></span>
+					</div>
+					<div class="input-group">
+						<button id="generateQuestionsList" class="inputSubmit" type="button">Generate List</button>
+					</div>
 				</form>
-				<ul id="questionsList">
-					<li class="message info">List will be displayed here!</li>
-				</ul>
-				<button id="submitTest" type="submit">Submit</button>
-			</section>
+			</article>
 
-			<div id="content">
+			<article id="questionsListSections">
+				<ul id="questionsList">
+				</ul>
+				<button id="submitTest" class="inputSubmit" type="submit">Submit</button>
+			</article>
+
+			<div id="percentageCalculator">
 				<form action="">
 					<div class="input-group">
 						<label>Questions</label>
@@ -79,9 +135,20 @@
 				</form>
 			</div>
 
+			<article id="results">
+
+			</article>
+
 		</div>
 
-		<footer>Footer</footer>
+		<footer id="footer">
+			<nav id="links">
+				<ul>
+					<li><a target="_blank" rel="noopener noreferrer" href="https://github.com/Gentian28/examPercentage">GitHub
+							<img src="images/icons/github-logo.png" alt="GitHub"></a></li>
+				</ul>
+			</nav>
+		</footer>
 
 	</div>
 
