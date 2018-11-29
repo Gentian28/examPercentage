@@ -79,66 +79,116 @@
 		<header id="header" class="flex space-between">
 			<nav id="menu">
 				<ul class="flex tab-list">
-					<li id="trackExamTab">Track Exam</li>
+					<li id="trackExamTab" class="active">Track Exam</li>
 					<li id="calculatePercentageTab">Calculate Percentage</li>
 					<li id="getResultsTab">Get Results</li>
-				</ul>
-			</nav>
-			<nav id="authentication">
-				<ul class="flex">
-					<li>Sign up</li>
-					<li>Login</li>
+					<li id="authentication">
+					</li>
 				</ul>
 			</nav>
 		</header>
 
 		<div id="content" class="tabs-content-list">
 
-			<article id="numberOfQuestionsForm">
-				<form action="" id="allQuestionsForm">
-					<div class="input-group">
-						<label for="allQuestions">Total exam questions</label>
-						<input type="number" id="allQuestions" placeholder="Number of questions">
-						<span class="input-focus"></span>
-					</div>
-					<div class="input-group">
-						<button id="generateQuestionsList" class="inputSubmit" type="button">Generate List</button>
-					</div>
-				</form>
-			</article>
+			<section class="active">
+				<article id="numberOfQuestionsForm">
+					<form action="" id="allQuestionsForm">
+						<div class="input-group">
+							<label for="allQuestions">Total exam questions</label>
+							<input type="number" id="allQuestions" placeholder="Number of questions">
+							<span class="input-focus"></span>
+						</div>
+						<div class="input-group">
+							<button id="generateQuestionsList" class="inputSubmit" type="button">Generate List</button>
+						</div>
+					</form>
+				</article>
 
-			<article id="questionsListSections">
-				<ul id="questionsList">
-				</ul>
-				<button id="submitTest" class="inputSubmit" type="submit">Submit</button>
-			</article>
+				<article id="questionsListSections">
+					<ul id="questionsList">
+					</ul>
+					<button id="submitTest" class="inputSubmit" type="submit">Submit</button>
+				</article>
+			</section>
 
-			<div id="percentageCalculator">
-				<form action="">
-					<div class="input-group">
-						<label>Questions</label>
+			<section>
+				<div id="percentageCalculator">
+					<form action="">
+						<div class="input-group">
+							<label>Questions</label>
+							<br>
+							<input type="number" name="questions" id="questions" min="0" placeholder="Number of questions">
+							<span class="input-focus"></span>
+						</div>
 						<br>
-						<input type="number" name="questions" id="questions" min="0" placeholder="Number of questions">
-						<span class="input-focus"></span>
-					</div>
-					<br>
-					<div class="input-group">
-						<label>Wrong Answers</label>
-						<br>
-						<input type="number" name="wrongAnswers" id="wrongAnswers" min="0" disabled>
-						<span class="input-focus"></span>
-					</div>
+						<div class="input-group">
+							<label>Wrong Answers</label>
+							<br>
+							<input type="number" name="wrongAnswers" id="wrongAnswers" min="0" disabled>
+							<span class="input-focus"></span>
+						</div>
+					</form>
 					<br>
 					<div id="result">
 						<p class="message info">Result will be displayed here!</p>
 					</div>
-				</form>
-			</div>
+				</div>
+			</section>
 
-			<article id="results">
+			<section>
+				<ul id="results">
+				</ul>
+			</section>
 
-			</article>
+			<section>
+				<section id="userAuthentication">
 
+					<ul>
+						<li>Sign Up</li>
+						<li>Login</li>
+					</ul>
+					<ul>
+						<li>
+							<form action="" id="signUpForm">
+								<div class="input-group">
+									<label>E-mail</label>
+									<input type="email" name="email" id="email" placeholder="Your e-mail">
+									<span class="input-focus"></span>
+								</div>
+								<div class="input-group">
+									<label>Password</label>
+									<input type="password" name="password" id="password" placeholder="Create password">
+									<span class="input-focus"></span>
+								</div>
+								<div class="input-group">
+									<button type="button" id="create" class="inputSubmit">Create Account</button>
+								</div>
+							</form>
+						</li>
+						<li>
+							<form action="" id="loginForm">
+								<div class="input-group">
+									<label>E-mail</label>
+									<input type="email" name="email" id="loginMail" placeholder="Your e-mail">
+									<span class="input-focus"></span>
+								</div>
+								<div class="input-group">
+									<label>Password</label>
+									<input type="password" name="password" id="loginPass" placeholder="Your password"><span class="input-focus"></span>
+								</div>
+								<div class="input-group">
+									<button type="button" id="login" class="inputSubmit">Login</button>
+								</div>
+							</form>
+						</li>
+					</ul>
+
+				</section>
+
+				<button id="signout">Signout</button>
+				<button id="getUser">Get User</button>
+				<button id="googleAuth">Google Authentication</button>
+			</section>
 		</div>
 
 		<footer id="footer">
