@@ -139,3 +139,20 @@ firebase.auth().onAuthStateChanged(function (user) {
         authentication.innerHTML = 'Login';
     }
 });
+
+var signToggle = document.getElementsByClassName('signToggle')[0].children;
+var authenticationsFormContainer = document.getElementsByClassName('authenticationsFormContainer')[0].children;
+// console.log(signToggle);
+
+signToggle[0].onclick = function () {
+    this.nextElementSibling.classList.remove('active');
+    this.classList.add('active');
+    authenticationsFormContainer[0].classList.add('active');
+    authenticationsFormContainer[0].nextElementSibling.classList.remove('active');
+}
+signToggle[1].onclick = function () {
+    this.previousElementSibling.classList.remove('active');
+    this.classList.add('active');
+    authenticationsFormContainer[1].classList.add('active');
+    authenticationsFormContainer[1].previousElementSibling.classList.remove('active');
+}
