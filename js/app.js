@@ -98,7 +98,6 @@ getUser.onclick = function () {
 
     if (user != null) {
         console.log(user);
-        authentication.innerHTML = 'none';
     } else {
         console.log('No user is logged in');
     }
@@ -132,11 +131,11 @@ firebase.auth().getRedirectResult().then(function (result) {
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-        authentication.innerHTML = `${user.displayName}`;
+        authenticationControl.innerHTML = `<div>${user.displayName}</div>`;
         console.log('Is signed in');
         console.log(user.displayName);
     } else {
-        authentication.innerHTML = 'Login';
+        authenticationControl.innerHTML = '<div class=""loginButton>Login</div>';
     }
 });
 

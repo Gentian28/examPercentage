@@ -32,12 +32,6 @@
 			timestampsInSnapshots: true
 		});
 
-		// db.collection("users").get().then((querySnapshot) => {
-		// 	querySnapshot.forEach((doc) => {
-		// 		console.log(doc);
-		// 		console.log(`${doc.id} => ${doc.data()}`);
-		// 	});
-		// });
 	</script>
 
 	<script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
@@ -76,20 +70,25 @@
 
 	<div id="wrapper">
 
+		<!-- header -->
 		<header id="header" class="flex space-between">
 			<nav id="menu">
 				<ul class="flex tab-list">
 					<li id="trackExamTab" class="active">Track Exam</li>
 					<li id="calculatePercentageTab">Calculate Percentage</li>
 					<li id="getResultsTab">Get Results</li>
-					<li id="authentication">
-					</li>
+
 				</ul>
 			</nav>
+			<div id="authenticationControl">
+			</div>
 		</header>
+		<!-- header end -->
 
+		<!-- content -->
 		<div id="content" class="tabs-content-list">
 
+			<!-- exam -->
 			<section class="active">
 				<article id="numberOfQuestionsForm">
 					<form action="" id="allQuestionsForm">
@@ -110,7 +109,9 @@
 					<button id="submitTest" class="inputSubmit" type="submit">Submit</button>
 				</article>
 			</section>
+			<!-- exam end -->
 
+			<!-- percentage calculator -->
 			<section>
 				<div id="percentageCalculator">
 					<form action="">
@@ -134,67 +135,75 @@
 					</div>
 				</div>
 			</section>
+			<!-- percentage calculator end -->
 
+			<!-- results -->
 			<section>
 				<ul id="results">
 				</ul>
 			</section>
+			<!-- results end -->
 
-			<section>
-				<section id="userAuthentication">
-
-					<ul class="signToggle">
-						<li class="active">Sign Up</li>
-						<li>Login</li>
-					</ul>
-					<ul class="authenticationsFormContainer">
-						<li class="active">
-							<form action="" id="signUpForm">
-								<div class="input-group">
-									<label>E-mail</label>
-									<input type="email" name="email" id="email" placeholder="Your e-mail">
-									<span class="input-focus"></span>
-								</div>
-								<div class="input-group">
-									<label>Password</label>
-									<input type="password" name="password" id="password" placeholder="Create password">
-									<span class="input-focus"></span>
-								</div>
-								<div class="input-group">
-									<button type="button" id="create" class="inputSubmit">Create Account</button>
-								</div>
-							</form>
-						</li>
-						<li>
-							<form action="" id="loginForm">
-								<div class="input-group">
-									<label>E-mail</label>
-									<input type="email" name="email" id="loginMail" placeholder="Your e-mail">
-									<span class="input-focus"></span>
-								</div>
-								<div class="input-group">
-									<label>Password</label>
-									<input type="password" name="password" id="loginPass" placeholder="Your password"><span class="input-focus"></span>
-								</div>
-								<div class="input-group">
-									<button type="button" id="login" class="inputSubmit">Login</button>
-								</div>
-							</form>
-						</li>
-					</ul>
-
-					<button id="googleAuth">
-						<span><img class="firebaseui-idp-icon" alt="" src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"></span>
-						<span class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with Google</span>
-					</button>
-
-				</section>
-
-				<button id="signout">Signout</button>
-				<button id="getUser">Get User</button>
-			</section>
 		</div>
+		<!-- content end -->
 
+		<!-- user authentication -->
+		<article id="authentication">
+			<section id="userAuthentication">
+
+				<ul class="signToggle">
+					<li class="active">Sign Up</li>
+					<li>Login</li>
+				</ul>
+				<ul class="authenticationsFormContainer">
+					<li class="active">
+						<form action="" id="signUpForm">
+							<div class="input-group">
+								<label>E-mail</label>
+								<input type="email" name="email" id="email" placeholder="Your e-mail">
+								<span class="input-focus"></span>
+							</div>
+							<div class="input-group">
+								<label>Password</label>
+								<input type="password" name="password" id="password" placeholder="Create password">
+								<span class="input-focus"></span>
+							</div>
+							<div class="input-group">
+								<button type="button" id="create" class="inputSubmit">Create Account</button>
+							</div>
+						</form>
+					</li>
+					<li>
+						<form action="" id="loginForm">
+							<div class="input-group">
+								<label>E-mail</label>
+								<input type="email" name="email" id="loginMail" placeholder="Your e-mail">
+								<span class="input-focus"></span>
+							</div>
+							<div class="input-group">
+								<label>Password</label>
+								<input type="password" name="password" id="loginPass" placeholder="Your password"><span class="input-focus"></span>
+							</div>
+							<div class="input-group">
+								<button type="button" id="login" class="inputSubmit">Login</button>
+							</div>
+						</form>
+					</li>
+				</ul>
+
+				<button id="googleAuth">
+					<span><img class="firebaseui-idp-icon" alt="" src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"></span>
+					<span class="firebaseui-idp-text firebaseui-idp-text-long">Sign in with Google</span>
+				</button>
+
+			</section>
+
+			<button id="signout">Signout</button>
+			<button id="getUser">Get User</button>
+		</article>
+		<!-- user authentication end -->
+
+		<!-- footer -->
 		<footer id="footer">
 			<nav id="links">
 				<ul>
@@ -203,6 +212,7 @@
 				</ul>
 			</nav>
 		</footer>
+		<!-- footer end -->
 
 	</div>
 
