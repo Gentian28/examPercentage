@@ -312,6 +312,7 @@ ul, ol {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
 }
 .modalForm {
     display: flex;
@@ -335,7 +336,7 @@ ul, ol {
 .signToggle {
     display: flex;
     width: 100%;
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 15px;
     color: #999999;
 }
@@ -431,8 +432,6 @@ ul, ol {
     to{ bottom:0; opacity:1 }
 }
 /* page content animation end */
-
-
 
 @media (max-width: 480px) {
     .input-group input {
