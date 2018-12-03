@@ -1,6 +1,3 @@
-// import { resultsList } from './variables.js';
-
-
 export function getResults(user) {
     let resultsList = "";
 

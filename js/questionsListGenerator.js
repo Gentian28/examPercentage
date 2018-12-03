@@ -13,19 +13,13 @@ function generateList() {
                     <input type="radio" name="answer" value="wrong"> 
                     <span class="checkmark"></span>
                 </label>
+                <label>
+                    <input type="checkbox" name="problematic" value="problematic">
+                </label>
             </form>
         </li>`;
     }
     return list;
-    // let listItems = questionsList.children;
-
-    // // console.log(listItems);
-
-    // for (i = 0; i < listItems.length; i++) {
-    //     listItems[i].onclick = function () {
-    //         // console.log(this.children[0].innerText);
-    //     }
-    // }
 }
 
 export function populateQuestionsList() {

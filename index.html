@@ -70,6 +70,11 @@
 
 	<div id="wrapper">
 
+		<div id="modal" class="message info flex align-center">
+			<span id="modalMessage">Modal Message</span>
+			<img src="images/icons/closeModal.png" alt="" id="closeModal">
+		</div>
+
 		<!-- header -->
 		<header id="header" class="flex space-between">
 			<nav id="menu">
@@ -104,6 +109,7 @@
 				</article>
 
 				<article id="questionsListSections">
+					<img src="images/icons/close.png" alt="" id="closeQuestionsList" title="Close">
 					<ul id="questionsList">
 					</ul>
 					<button id="submitTest" class="inputSubmit" type="submit">Submit</button>
@@ -148,8 +154,9 @@
 		<!-- content end -->
 
 		<!-- user authentication -->
-		<article id="authentication">
-			<section id="userAuthentication">
+		<article id="authentication" class="modalContainer">
+			<img src="images/icons/close.png" alt="" class="closeModalContainer" title="Close">
+			<section id="userAuthentication" class="animated modalForm">
 
 				<ul class="signToggle">
 					<li class="active">Sign Up</li>
@@ -198,11 +205,35 @@
 
 			</section>
 
-			<button id="signout">Signout</button>
-			<button id="getUser">Get User</button>
 		</article>
 		<!-- user authentication end -->
 
+		<article id="examDetails" class="modalContainer">
+			<img src="images/icons/close.png" alt="" class="closeModalContainer" title="Close">
+			<div class="modalForm animated modalPadding">
+				<form action="">
+					<div class="input-group">
+						<label for="">Exam</label>
+						<input type="text" id="exam" required>
+						<span class="input-focus"></span>
+					</div>
+					<div class="input-group">
+						<label for="">Version</label>
+						<input type="text" id="version" required>
+						<span class="input-focus"></span>
+					</div>
+					<div class="input-group">
+						<label for="">Try</label>
+						<input type="number" id="tryNr" required>
+						<span class="input-focus"></span>
+					</div>
+					<div class="input-group">
+						<button id="submitExam" class="inputSubmit" type="button">Submit</button>
+					</div>
+				</form>
+			</div>
+
+		</article>
 		<!-- footer -->
 		<footer id="footer">
 			<nav id="links">
@@ -217,6 +248,7 @@
 	</div>
 
 
+	<script src="js/authentication/authentication.js" type="module"></script>
 	<script src="js/app.js" type="module"></script>
 
 </body>
