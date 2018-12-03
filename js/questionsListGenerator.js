@@ -13,8 +13,9 @@ function generateList() {
                     <input type="radio" name="answer" value="wrong"> 
                     <span class="checkmark"></span>
                 </label>
-                <label>
+                <label class="customCheckbox">
                     <input type="checkbox" name="problematic" value="problematic">
+                    <span class="checkboxMark"></span>
                 </label>
             </form>
         </li>`;

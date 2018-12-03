@@ -34,14 +34,14 @@ closeQuestionsList.onclick = function () {
 
 // submit exam answers
 submitTest.onclick = function () {
+    let correctAnswers = getAnswers().correctAnswersList.length;
+    let wrongAnswers = getAnswers().wrongAnswersList.length;
+    let wrongNumbers = getAnswers().wrongAnswersNumber;
+    let problematic = getAnswers().problematicQuestions;
     var user = firebase.auth().currentUser;
     if (user) {
         examDetails.style.display = 'block';
-        var email = user.email;
-        let correctAnswers = getAnswers().correctAnswersList.length;
-        let wrongAnswers = getAnswers().wrongAnswersList.length;
-        let wrongNumbers = getAnswers().wrongAnswersNumber;
-        let problematic = getAnswers().problematicQuestions;
+        let email = user.email;
         submitExam.onclick = function () {
             let examVal = exam.value;
             let versionVal = version.value;
@@ -53,7 +53,13 @@ submitTest.onclick = function () {
             insertAnswers(correctAnswers, wrongAnswers, wrongNumbers, problematic, email, examVal, versionVal, tryNrVal);
         }
     } else {
-        alert('You need to login');
+        let examResult = '';
+        modalExamResults.style.display = 'block';
+        examResult += `<li>Correct Answers: ${correctAnswers}</li>
+        <li>Wrong Answers: ${wrongAnswers}</li>
+        <li>Wrong Answers List: ${wrongNumbers}</li>
+        <li>Problematic Questions: ${problematic}</li>`;
+        offlineResults.innerHTML = examResult;
     }
 }
 
@@ -90,10 +96,6 @@ signToggle[1].onclick = function () {
     authenticationsFormContainer[1].previousElementSibling.classList.remove('active');
 }
 
-document.getElementsByClassName('modalContainer').onclick = function () {
-    console.log(1);
-    this.style.display = 'none';
-}
 
 // let modalContainer = document.getElementsByClassName('modalContainer');
 // for (var i = 0; i < modalContainer.length; i++) {
@@ -108,7 +110,6 @@ closeModal.onclick = function () {
 
 let closeModalContainer = document.querySelectorAll('.closeModalContainer');
 for (let i = 0; i < closeModalContainer.length; i++) {
-    console.log('closed')
     closeModalContainer[i].onclick = function () {
         this.parentElement.style.display = 'none';
     }
