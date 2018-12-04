@@ -298,7 +298,7 @@ ul, ol {
     border-radius: 5px;
     box-shadow: 0px 3px 5px 0px #e0e0e0;
     color: #6b6b6b;
-    word-break: break-all;
+    word-break: break-word;
 }
 /* #authentication {
     margin-left: auto !important;
