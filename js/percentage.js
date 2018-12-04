@@ -1,5 +1,10 @@
 import { error } from './messages.js';
 
+export function percentageCalculator(total, wrong) {
+    let percentage = ((total - wrong) / total) * 100;
+    return percentage;
+}
+
 function calculatePercentage() {
     let questionsVal = questions.value;
     let wrongAnswersVal = wrongAnswers.value;
