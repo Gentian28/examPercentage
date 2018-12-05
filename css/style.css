@@ -227,29 +227,34 @@ ul, ol {
 }
 
 /* When the radio button is checked, add a blue background */
-.radioButton input:checked ~ .checkmark {
-    border: 2px solid rgb(77, 144, 254);
+.radioButton input[value="correct"]:checked ~ .checkmark {
+    border: 2px solid #3c763d;
 }
 
+.radioButton input[value="wrong"]:checked ~ .checkmark {
+    border: 2px solid #a94442;
+}
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }
 
 /* Show the indicator (dot/circle) when checked */
 .radioButton input:checked ~ .checkmark:after {
     display: block;
 }
-
-/* Style the indicator (dot/circle) */
-.radioButton .checkmark:after {
-    width: 10px;
-    height: 10px;
-    background: rgb(77, 144, 254);
-    border-radius: 50%;
+.radioButton input[value="correct"]:checked ~ .checkmark::after {
+    background: #3c763d;
 }
+.radioButton input[value="wrong"]:checked ~ .checkmark::after {
+    background: #a94442;
+}
+
 
 .flex {
     display: flex;
@@ -469,7 +474,7 @@ ul, ol {
     display: flex;
     height: 21px;
     width: 21px;
-    background-color: #eee;
+    background-color: #ddd;
     color: #ffffff;
     font-size: 16px;
     justify-content: center;
@@ -483,12 +488,12 @@ ul, ol {
 
 /* When the checkbox is checked, add a blue background */
 .customCheckbox input:checked ~ .checkboxMark {
-    background-color: rgb(77, 144, 254);
+    background-color: #f7931e;
 }
 
 /* Create the checkboxMark/indicator (hidden when not checked) */
 .checkboxMark:after {
-    content: "?";
+    content: "!";
     position: absolute;
     display: none;
 }
