@@ -4,6 +4,7 @@ import { getAnswers } from './questionsResult.js';
 import { insertAnswers } from './services/insert.js';
 import { tabs } from './functions.js';
 import { hideModal, setModal } from './modal.js'
+import { getResults } from './services/get.js'
 // import * as authentication from './authentication/authentication.js';
 
 // toggle wrong Answers disabled attribute
@@ -51,6 +52,7 @@ submitTest.onclick = function () {
             questionsListSections.style.display = 'none';
             setModal('Exam result was inserted successfuly');
             insertAnswers(correctAnswers, wrongAnswers, wrongNumbers, problematic, email, examVal, versionVal, tryNrVal);
+            getResults(email);
         }
     } else {
         let examResult = '';
