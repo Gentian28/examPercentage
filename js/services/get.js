@@ -7,19 +7,23 @@ export function getResults(user) {
         querySnapshot.forEach((doc) => {
             let data = doc.data();
             let totalQuestions = data.correctAnswers + data.wrongAnswers;
+            let percentage = percentageCalculator(totalQuestions, data.wrongAnswers);
+            console.log(percentage);
             resultsList += `<li>
-                <ul>
-                    <li>Total Questions: ${totalQuestions}</li>
-                    <li>Correct Answers: ${data.correctAnswers}</li>
-                    <li>Wrong Answers: ${data.wrongAnswers}</li>
-                    <li>Wrong Answers List: ${data.wrongAnswersNumber}</li>
-                    <li>Problematic Questions: ${data.problematicQuestions}</li>
-                    <li>Date: ${data.date.toDate()}</li>
-                    <li>Exam Name: ${data.exam}</li>
-                    <li>Version: ${data.version}</li>
-                    <li>Attempt: ${data.tryNr}</li>
-                    <li>Percentage: ${percentageCalculator(totalQuestions, data.wrongAnswers)}%</li>
-                </ul>
+                <article class="card">
+                    <h3 class="cardHeader">Exam Name: ${data.exam}</h3>
+                    <section class="cardContent">
+                        <p>Total Questions: ${totalQuestions}</p>
+                        <p>Correct Answers: ${data.correctAnswers}</p>
+                        <p>Wrong Answers: ${data.wrongAnswers}</p>
+                        <p>Wrong Answers List: ${data.wrongAnswersNumber}</p>
+                        <p>Problematic Questions: ${data.problematicQuestions}</p>
+                        <p>Date: ${data.date.toDate()}</p>
+                        <p>Version: ${data.version}</p>
+                        <p>Attempt: ${data.tryNr}</p>
+                    </section>
+                    <p>Percentage: ${percentage.toString().substring(0, 5)}%</p>
+                </article>
             </li>`;
         });
 
