@@ -311,23 +311,40 @@ p {
     -moz-column-break-inside: avoid;
     margin-bottom: 15px;
 }
+
+
 .card {
     font-size: 14px;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
     box-shadow: 0px 3px 5px 0px #e0e0e0;
-    color: #6b6b6b;
+    color: #525252;
     word-break: break-word;
+    background: #ffffff;
 }
 .cardHeader {
     color: #2f2f2f;
     padding: 7px 10px;
-    border-bottom: 1px solid #dcdcdc;
-    font-size: 15px;
+    border: 1px solid #969696;
+    font-size: 14px;
+    background: #969696;
+    color: #fff;
+    border-radius: 3px 3px 0 0;
+    font-weight: 500;
 }
 .cardContent {
     padding: 10px;
 }
+.cardPercentage {
+    padding: 7px 10px;
+}
+.card .success {
+    border-top: 1px solid #3c763d;
+}
+.card .error {
+    border-top: 1px solid #a94442;
+}
+
 /* #authentication {
     margin-left: auto !important;
 } */
