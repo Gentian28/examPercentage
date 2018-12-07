@@ -18,3 +18,31 @@ export var tabs = function (tabsList, tabsContentList) {
         }
     }
 }
+
+export function showResult() {
+    this.children[1].style.display = 'block';
+}
+
+export function hideResult() {
+    this.parentElement.parentElement.style.display = 'none';
+}
+
+export function toggleCardList() {
+
+    let cardListItem = document.querySelectorAll('.cardListItem');
+    let closeList = document.querySelectorAll('.closeList');
+
+    for (let i = 0; i < cardListItem.length; i++) {
+        cardListItem[i].onclick = function () {
+            this.children[1].classList.add('active');
+        }
+    }
+
+    for (let i = 0; i < closeList.length; i++) {
+        closeList[i].onclick = function (e) {
+            e.path[2].classList.remove('active');
+            e.stopPropagation();
+        }
+    }
+
+}
