@@ -105,7 +105,6 @@ p {
     display: flex;
     flex-flow: column;
     padding: 0 15px;
-    margin: 15px 0;
     height: 100%;
 }
 
@@ -303,6 +302,8 @@ p {
     column-gap: 0;
     -webkit-column-gap: 15px;
     -moz-column-gap: 0;
+    padding: 1px;
+    padding: 15px 1px 1px 1px;
 }
 #results > li {
     break-inside: avoid;
@@ -312,37 +313,84 @@ p {
     margin-bottom: 15px;
 }
 
-
 .card {
     font-size: 14px;
-    border: 1px solid #dcdcdc;
     border-radius: 5px;
-    box-shadow: 0px 3px 5px 0px #e0e0e0;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.3),0 2px 6px 2px rgba(60,64,67,.15);
     color: #525252;
     word-break: break-word;
     background: #ffffff;
+    border-radius: 8px;
 }
 .cardHeader {
     color: #2f2f2f;
     padding: 7px 10px;
-    border: 1px solid #969696;
     font-size: 14px;
-    background: #969696;
-    color: #fff;
     border-radius: 3px 3px 0 0;
     font-weight: 500;
+    background-color: #f5f5f5;
+    box-shadow: 0 -1px 0 rgba(0,0,0,.12) inset;
+    border-radius: 8px 8px 0 0;
+}
+.cardHeader h3 {
+    font-size: 14px;
+}
+.cardDate {
+    font-size: 12px;
+    font-weight: 600;
 }
 .cardContent {
     padding: 10px;
 }
-.cardPercentage {
+.cardList {
+    color: #2f2f2f;
+    font-size: 13px;
+    font-weight: 600;
+}
+.cardList .cardListItem {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: -1px 1px 0 rgba(0,0,0,.12) inset;
+    position: relative;
+}
+.cardListItem p {
+    width: 100%;
+    text-align: center;
     padding: 7px 10px;
 }
+.cardList .cardListItem > div {
+    display: none;
+    position: absolute;
+    /* padding: 10px; */
+    background: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
+    border-radius: 8px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    max-height: 130px;
+    overflow-y: auto;
+}
+.cardListHeader {
+    font-weight: 600;
+    font-size: 12px;
+}
+.cardListHeader img {
+    max-width: 13px;
+}
+.cardPercentage {
+    padding: 7px 10px;
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+}
 .card .success {
-    border-top: 1px solid #3c763d;
+    box-shadow: 0 1px 0 rgba(60, 118, 61, .12) inset;
 }
 .card .error {
-    border-top: 1px solid #a94442;
+    box-shadow: 0 1px 0 rgba(169, 68, 66,.12) inset;
 }
 
 /* #authentication {
