@@ -318,7 +318,7 @@ p {
     font-size: 14px;
     border-radius: 5px;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,.3),0 2px 6px 2px rgba(60,64,67,.15);
-    color: #525252;
+    color: #2f2f2f;
     word-break: break-word;
     background: #ffffff;
     border-radius: 8px;
@@ -342,6 +342,8 @@ p {
 }
 .cardContent {
     padding: 10px;
+    font-weight: 500;
+    font-size: 14px;
 }
 .cardList {
     color: #2f2f2f;

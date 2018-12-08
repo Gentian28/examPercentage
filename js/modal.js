@@ -14,6 +14,6 @@ export function setModal(message) {
 
     setTimeout(() => {
         hideModal();
-    }, 3800);
+    }, 5000);
 
 }
