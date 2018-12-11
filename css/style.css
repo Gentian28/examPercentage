@@ -161,6 +161,7 @@ p {
     align-self: flex-end;
     max-width: 15px;
     cursor: pointer;
+    margin-top: 7px;
 }
 .message {
     padding: 15px;
@@ -317,7 +318,7 @@ p {
     font-size: 14px;
     border-radius: 5px;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,.3),0 2px 6px 2px rgba(60,64,67,.15);
-    color: #525252;
+    color: #2f2f2f;
     word-break: break-word;
     background: #ffffff;
     border-radius: 8px;
@@ -341,6 +342,8 @@ p {
 }
 .cardContent {
     padding: 10px;
+    font-weight: 500;
+    font-size: 14px;
 }
 .cardList {
     color: #2f2f2f;
@@ -374,6 +377,12 @@ p {
     max-height: 130px;
     overflow-y: auto;
 }
+.cardList .cardListItem > div.active {
+    display: block;
+}
+/* .cardListItem:hover > div {
+    display: block;
+} */
 .cardListHeader {
     font-weight: 600;
     font-size: 12px;
@@ -487,9 +496,9 @@ p {
 .animated {
     position: relative;
     -webkit-animation-name: animatebottom;
-    -webkit-animation-duration: .5s;
+    -webkit-animation-duration: .3s;
     animation-name: animatebottom;
-    animation-duration: .5s
+    animation-duration: .3s
 }
  
 #modal {
@@ -644,6 +653,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     padding: 0 15px;
 }
+
 
 @media (max-width: 768px) {
     /* grid */

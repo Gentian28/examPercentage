@@ -22,17 +22,23 @@ export function getResults(user) {
                         <div><span class="cardFieldLabel">Attempt:</span> ${data.tryNr}</div>
                     </section>
                     <section class="cardList flex justify-center align-center">
-                        <div class="cardListItem">
+                        <div class="cardListItem" onclick="this.children[1].classList.add('active')">
                             <p>Wrong Answers List</p>
-                            <div>
-                                <p class="cardHeader cardListHeader flex space-between align-center"><span>Wrong Answers List</span><img src="images/icons/close.png" alt="Close" class="closeList" title="Close"></p>
+                            <div class="animated">
+                                <p class="cardHeader cardListHeader flex space-between align-center">
+                                    <span>Wrong Answers List</span>
+                                    <img src="images/icons/close.png" alt="Close" class="closeList" title="Close"  onclick="this.parentElement.parentElement.classList.remove('active'); event.stopPropagation();">
+                                </p>
                                 <div class="cardContent">${data.wrongAnswersNumber}</div>
                             </div>
                         </div>
-                        <div class="cardListItem">
+                        <div class="cardListItem" onclick="(this.children[1].classList.add('active'))">
                             <p>Problematic Questions</p>
-                            <div>
-                                <p class="cardHeader cardListHeader flex space-between align-center"><span>Problematic Questions</span><img src="images/icons/close.png" alt="Close" class="closeList" title="Close"></p>
+                            <div class="animated">
+                                <p class="cardHeader cardListHeader flex space-between align-center">
+                                    <span>Problematic Questions</span>
+                                    <img src="images/icons/close.png" alt="Close" class="closeList" title="Close"  onclick="this.parentElement.parentElement.classList.remove('active'); event.stopPropagation();">
+                                </p>
                                 <div class="cardContent">${data.problematicQuestions}</div>
                             </div>
                         </div>
