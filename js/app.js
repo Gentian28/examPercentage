@@ -22,10 +22,16 @@ wrongAnswers.oninput = function () {
 }
 
 // generates and populates questions list
-generateQuestionsList.onclick = function () {
-    numberOfQuestionsForm.style.display = 'none';
-    questionsListSections.style.display = 'flex';
-    populateQuestionsList();
+generateQuestionsList.onclick = function (event) {
+    event.preventDefault();
+    let allQuestionsVal = allQuestions.value;
+    if (allQuestionsVal != "") {
+        numberOfQuestionsForm.style.display = 'none';
+        questionsListSections.style.display = 'flex';
+        populateQuestionsList();
+    } else {
+        setModal("Number of questions can\'t be empty!");
+    }
 }
 
 closeQuestionsList.onclick = function () {
@@ -48,12 +54,14 @@ submitTest.onclick = function () {
             let examVal = exam.value;
             let versionVal = version.value;
             let tryNrVal = tryNr.value;
-            examDetails.style.display = 'none';
-            numberOfQuestionsForm.style.display = 'flex';
-            questionsListSections.style.display = 'none';
-            setModal('Exam result was inserted successfuly');
-            insertAnswers(correctAnswers, wrongAnswers, wrongNumbers, problematic, email, examVal, versionVal, tryNrVal);
-            getResults(email);
+            if (examVal != "" && versionVal != "" && tryNrVal != "") {
+                examDetails.style.display = 'none';
+                numberOfQuestionsForm.style.display = 'flex';
+                questionsListSections.style.display = 'none';
+                setModal('Exam result was inserted successfuly');
+                insertAnswers(correctAnswers, wrongAnswers, wrongNumbers, problematic, email, examVal, versionVal, tryNrVal);
+                getResults(email);
+            }
         }
     } else {
         let examResult = '';
@@ -98,14 +106,6 @@ signToggle[1].onclick = function () {
     authenticationsFormContainer[1].classList.add('active');
     authenticationsFormContainer[1].previousElementSibling.classList.remove('active');
 }
-
-
-// let modalContainer = document.getElementsByClassName('modalContainer');
-// for (var i = 0; i < modalContainer.length; i++) {
-//     modalContainer[i].onclick = function () {
-//         this.style.display = 'none';
-//     }
-// }
 
 closeModal.onclick = function () {
     hideModal();
