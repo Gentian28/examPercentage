@@ -117,13 +117,17 @@ for (let i = 0; i < closeModalContainer.length; i++) {
     }
 }
 
-let cardListItem = document.querySelectorAll('.cardListItem');
-for (let i = 0; i < cardListItem.length; i++) {
-    console.log(cardListItem[i]);
-    cardListItem[i].onclick = function () {
-        console.log('this');
-    }
-}
+// setTimeout(() => {
+//     let cardListItem = document.querySelectorAll('.cardListItem');
+//     for (let i = 0; i < cardListItem.length; i++) {
+//         console.log(cardListItem[i]);
+//         cardListItem[i].onclick = function () {
+//             console.log('this');
+//         }
+//     }
+// }, 5000);
+
+
 
 // for (let i = 0; i < closeList.length; i++) {
 //     closeList[i].onclick = function () {
