@@ -43,7 +43,8 @@ submitTest.onclick = function () {
     if (user) {
         examDetails.style.display = 'block';
         let email = user.email;
-        submitExam.onclick = function () {
+        submitExam.onclick = function (event) {
+            event.preventDefault();
             let examVal = exam.value;
             let versionVal = version.value;
             let tryNrVal = tryNr.value;
